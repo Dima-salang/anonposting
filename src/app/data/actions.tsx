@@ -11,7 +11,7 @@ const FormSchema = z.object({
 
 export async function createPost(formData: FormData) {
     const {post} = FormSchema.parse({
-        post: formData.get('post'),
+        post: formData.get('post') as string,
     });
 
     console.log(post);
