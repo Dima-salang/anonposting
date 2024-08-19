@@ -24,8 +24,8 @@ export default function ViewSection() {
             <h1>Posts</h1>
             <div className='grid grid-rows-* auto-rows-auto gap-y-3'>
                 {data.map((post: Post) => (
-                    <div>
-                        <p key={post.id}>{post.postcontent}</p>
+                    <div key={post.id}>
+                        <p>{post.postcontent}</p>
                     </div>
                     
                 ))}
