@@ -1,5 +1,7 @@
 import NavBar from "./_components/navbar"
 
+import './globals.css';
+
 export const metadata = {
   title: 'AnonPosting',
   description: 'Website for anonymous posting for fun.',
@@ -12,12 +14,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-slate-800 text-white">
       <header>
         <NavBar />
       </header>
 
+      <div className="container mx-auto grid grid-cols-3">
       {children}
+      </div>
+
       
       <footer>
         <p>Copyright @Luis</p>

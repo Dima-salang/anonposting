@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import PostSection from "./_components/PostSection"
 import ViewSection from "./_components/ViewSection"
+import Loading from "./loading";
 
 export const metadata = {
     title: "AnonPosting",
@@ -8,13 +10,13 @@ export const metadata = {
 
 export default function Home() {
     return (
-        <>
-        <div>
+      <>
+          <div className="col-start-2 col-end-2 block sticky top-0">
             <PostSection />
-        </div>
-        <div>
-            <ViewSection />
-        </div>
-        </>
-    )
+          </div>
+          <div className='col-start-2 col-end-2'>
+              <ViewSection />
+          </div>
+      </>
+    );
 }

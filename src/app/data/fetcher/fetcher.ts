@@ -1,0 +1,1 @@
+export const fetcher: (url: URL | string) => Promise<any> = url => fetch(url).then(res => res.json());

@@ -22,9 +22,3 @@ export async function createPost(formData: FormData) {
 
     revalidatePath('/');
 }
-
-
-export async function getPosts() {
-    const {rows: posts} = await sql `SELECT * FROM posts`;
-    return posts;
-}
