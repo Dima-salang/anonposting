@@ -1,4 +1,4 @@
 {
-  "/data/post/route": "app/data/post/route.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/data/post/route": "app/data/post/route.js"
 }

@@ -20,5 +20,5 @@ export async function createPost(formData: FormData) {
         INSERT INTO posts (postContent) VALUES (${post})
     `;
 
-    revalidatePath('/');
+    revalidatePath('/data/post');
 }
