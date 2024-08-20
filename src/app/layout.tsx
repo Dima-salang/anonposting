@@ -14,12 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-slate-800 text-white">
+      <body className="bg-stone-800 text-white font-mono">
       <header>
         <NavBar />
       </header>
 
-      <div className="container mx-auto grid grid-cols-3">
+      <div className="container mx-auto grid grid-cols-6">
       {children}
       </div>
 
