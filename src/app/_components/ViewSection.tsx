@@ -20,9 +20,8 @@ export default function ViewSection() {
     }
 
     return (
-        <div>
-            <h1>Posts</h1>
-            <div className='grid grid-rows-* auto-rows-auto gap-y-3'>
+        <div className="h-screen">
+            <div className='grid grid-rows-* gap-y-5'>
                 {data.map((post: Post) => (
                     <div key={post.id} className="bg-slate-700 rounded-xl p-10">
                         <p>{post.postcontent}</p>

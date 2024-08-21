@@ -19,12 +19,12 @@ export default function RootLayout({
         <NavBar />
       </header>
 
-      <div className="container mx-auto grid grid-cols-6">
+      <div className="mx-5 my-4 grid grid-cols-12 gap-4">
       {children}
       </div>
 
       
-      <footer>
+      <footer className="mx-5">
         <p>Copyright @Luis</p>
       </footer>
       </body>

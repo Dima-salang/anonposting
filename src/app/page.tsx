@@ -11,11 +11,12 @@ export const metadata = {
 export default function Home() {
     return (
       <>
-          <div className="col-start-2 col-end-6 block sticky top-0">
-            <PostSection />
-          </div>
-          <div className='col-start-2 col-end-6'>
+          
+          <div className='col-span-9 h-full max-h-screen overflow-auto'>
               <ViewSection />
+          </div>
+          <div className="col-span-3 max-h-screen h-svh">
+            <PostSection />
           </div>
       </>
     );
