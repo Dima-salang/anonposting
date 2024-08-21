@@ -8,7 +8,6 @@ import Loading from '../loading';
 export default function ViewSection() {
 
     const {data, error, isLoading} = useSWR('/data/post', fetcher);
-    console.log(data);
     
     if (error) {
         console.error(error);
@@ -24,7 +23,7 @@ export default function ViewSection() {
             <div className='grid grid-rows-* gap-y-5'>
                 {data.map((post: Post) => (
                     <div key={post.id} className="bg-slate-700 rounded-xl p-10">
-                        <p>{post.postcontent}</p>
+                        <div className='whitespace-pre-wrap'>{post.postcontent}</div>
                     </div>
                     
                 ))}

@@ -14,11 +14,12 @@ export async function createPost(formData: FormData) {
         post: formData.get('post') as string,
     });
 
-    console.log(post);
 
     await sql `
         INSERT INTO posts (postContent) VALUES (${post})
     `;
 
+
     revalidatePath('/data/post');
+
 }
