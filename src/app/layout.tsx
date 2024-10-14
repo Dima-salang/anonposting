@@ -1,6 +1,6 @@
 import NavBar from "./_components/navbar"
 
-import './globals.css';
+import "./globals.css"
 
 export const metadata = {
   title: 'AnonPosting',

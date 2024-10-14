@@ -5,7 +5,7 @@ import { z } from "zod";
 import { revalidatePath } from 'next/cache';
 
 const postSchema = z.object({
-  post: z.string().min(1),
+  post: z.string().min(1).max(200),
 });
 
 
@@ -25,7 +25,7 @@ export async function createPost(formData: FormData) {
 
 
     await sql `
-        INSERT INTO posts (postContent) VALUES (${post})
+        INSERT INTO posts (post_content) VALUES (${post})
     `;
 
 

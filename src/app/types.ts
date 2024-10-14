@@ -1,4 +1,5 @@
 export interface Post {
     id: number,
-    postcontent: string
+    post_content: string,
+    timestamp: Date
 };

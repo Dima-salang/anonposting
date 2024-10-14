@@ -8,10 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        dracula: {
+          background: '#282a36',
+          foreground: '#f8f8f2',
+          selection: '#44475a',
+          comment: '#6272a4',
+          purple: '#bd93f9',
+          cyan: '#8be9fd',
+          green: '#50fa7b',
+          red: '#ff5555',
+          orange: '#ffb86c',
+        },
       },
     },
   },
