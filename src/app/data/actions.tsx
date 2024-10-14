@@ -4,15 +4,24 @@ import { sql } from '@vercel/postgres';
 import { z } from "zod";
 import { revalidatePath } from 'next/cache';
 
-const FormSchema = z.object({
-  post: z.string(),
+const postSchema = z.object({
+  post: z.string().min(1),
 });
 
 
+const requiredPost = postSchema.required();
+
+
 export async function createPost(formData: FormData) {
-    const {post} = FormSchema.parse({
-        post: formData.get('post') as string,
+    const parsedData = requiredPost.safeParse({
+        post: formData.get('post'),
     });
+
+    if (!parsedData.success) {
+        return { error: parsedData.error.flatten() };
+    }
+
+    const { post } = parsedData.data;
 
 
     await sql `
@@ -21,5 +30,7 @@ export async function createPost(formData: FormData) {
 
 
     revalidatePath('/data/post');
+
+    return { success: true };
 
 }

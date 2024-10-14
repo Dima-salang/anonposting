@@ -15,11 +15,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-stone-800 text-white font-mono">
+      
       <header>
         <NavBar />
       </header>
 
-      <div className="mx-5 my-4 grid grid-cols-12 gap-4">
+      <div className="container mx-auto">
       {children}
       </div>
 
