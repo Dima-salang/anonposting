@@ -74,7 +74,7 @@ export default function PostSection() {
                 />
                 {/* Character counter */}
                 <div className="text-right text-sm text-dracula-comment">
-                  {postContent.length} / 280 characters
+                  {postContent.length} / 1000 characters
                 </div>
               </div>
               <div className="h-full row-span-1 flex justify-between items-center">
@@ -110,7 +110,7 @@ export default function PostSection() {
               />
               {/* Character counter */}
               <div className="text-right text-sm text-dracula-comment ">
-                {postContent.length} / 200 characters
+                {postContent.length} / 1000 characters
               </div>
             </div>
             <div className="h-full row-span-1">

@@ -561,9 +561,6 @@ video {
 .row-span-5 {
   grid-row: span 5 / span 5;
 }
-.m-5 {
-  margin: 1.25rem;
-}
 .mx-5 {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
@@ -584,9 +581,6 @@ video {
 }
 .mt-2 {
   margin-top: 0.5rem;
-}
-.mb-2 {
-  margin-bottom: 0.5rem;
 }
 .block {
   display: block;

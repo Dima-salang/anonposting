@@ -5,7 +5,7 @@ import { z } from "zod";
 import { revalidatePath } from 'next/cache';
 
 const postSchema = z.object({
-  post: z.string().min(1).max(200),
+  post: z.string().min(1).max(1000),
 });
 
 
