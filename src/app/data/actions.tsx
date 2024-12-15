@@ -1,36 +1,31 @@
-'use server';
+"use server";
 
-import { sql } from '@vercel/postgres';
+import { sql } from "@vercel/postgres";
 import { z } from "zod";
-import { revalidatePath } from 'next/cache';
+import { revalidatePath } from "next/cache";
 
 const postSchema = z.object({
-  post: z.string().min(1).max(1000),
+  post: z.string().min(1).max(5000),
 });
-
 
 const requiredPost = postSchema.required();
 
-
 export async function createPost(formData: FormData) {
-    const parsedData = requiredPost.safeParse({
-        post: formData.get('post'),
-    });
+  const parsedData = requiredPost.safeParse({
+    post: formData.get("post"),
+  });
 
-    if (!parsedData.success) {
-        return { error: parsedData.error.flatten() };
-    }
+  if (!parsedData.success) {
+    return { error: parsedData.error.flatten() };
+  }
 
-    const { post } = parsedData.data;
+  const { post } = parsedData.data;
 
-
-    await sql `
+  await sql`
         INSERT INTO posts (post_content) VALUES (${post})
     `;
 
+  revalidatePath("/data/post");
 
-    revalidatePath('/data/post');
-
-    return { success: true };
-
+  return { success: true };
 }
